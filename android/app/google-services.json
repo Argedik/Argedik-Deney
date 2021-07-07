@@ -1,0 +1,47 @@
+{
+  "project_info": {
+    "project_number": "63384086679",
+    "project_id": "argedik-2366e",
+    "storage_bucket": "argedik-2366e.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:63384086679:android:068cb5b998cf286a40e1d2",
+        "android_client_info": {
+          "package_name": "com.example.argedik"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "63384086679-kika3otoucvqjvbltq2a0c45k9tn8o22.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.argedik",
+            "certificate_hash": "1cdf95642dedc24f8c29d6814af3196cbfda105b"
+          }
+        },
+        {
+          "client_id": "63384086679-u7co6hvg9jcg158mue0tqsi453v6fmb2.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBaOqHCZcVy2HzfN08thezlrALSmcaIKBs"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "63384086679-u7co6hvg9jcg158mue0tqsi453v6fmb2.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
