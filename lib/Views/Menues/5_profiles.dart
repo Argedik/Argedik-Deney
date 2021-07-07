@@ -35,7 +35,7 @@ class Profiles extends StatelessWidget {
                     await refFoods.child("Asure.jpg").getDownloadURL();
                 print(photoUrl);
               },
-              child: Text("absürt"),
+              child: Text("asdabsürt"),
             ),
           ],
         ),
