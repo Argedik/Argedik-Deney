@@ -9,6 +9,7 @@ import 'package:image_picker/image_picker.dart';
 import 'package:intl/intl.dart';
 import 'dart:io';
 
+//FirebaseFile ile FirebaseApi aynı anda yazıldı. Amaç Storage'deki tüm resimleri çekmek
 class FirebaseApi {
   static Future<List<String>> _getDownloadLinks(List<Reference> refs) =>
       Future.wait(refs.map((ref) => ref.getDownloadURL()).toList());
@@ -43,16 +44,17 @@ class FirebaseFile {
   final String url;
 
   const FirebaseFile({
-    @required this.ref,
-    @required this.name,
-    @required this.url,
+    required this.ref,
+    required this.name,
+    required this.url,
   });
 }
 
 class Auth {
   final _firebaseAuth = FirebaseAuth.instance;
-  Future<User> signInAnonymously() async {
-    final userCredentials = await _firebaseAuth.signInAnonymously();
+  Future<User?> signInAnonymously() async {
+    final UserCredential userCredentials =
+        await _firebaseAuth.signInAnonymously();
     return userCredentials.user;
   }
 
@@ -87,7 +89,7 @@ class Firebase2 extends ChangeNotifier {
   List<UploadTask> _uploadTask = [];
 
   Future<UploadTask> uploadFile(PickedFile file) async {
-    UploadTask uploadTask;
+    UploadTask? uploadTask;
     Reference ref =
         FirebaseStorage.instance.ref().child('/Foods').child('/Asure.jpg');
     final metadata = SettableMetadata(

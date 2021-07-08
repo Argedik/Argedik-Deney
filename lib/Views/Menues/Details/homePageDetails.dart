@@ -7,12 +7,12 @@ class HomePageDetails extends StatefulWidget {
   final Color renk;
 
   const HomePageDetails({
-    Key key,
-    this.description,
-    this.product,
-    this.image,
-    this.renk,
-    this.id,
+    Key? key,
+    required this.description,
+    required this.product,
+    required this.image,
+    required this.renk,
+    required this.id,
   }) : super(key: key);
 
   @override

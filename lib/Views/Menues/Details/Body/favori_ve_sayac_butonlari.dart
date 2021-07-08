@@ -4,7 +4,7 @@ import 'kart_sayaci.dart';
 
 class FavoriButonveSayac extends StatelessWidget {
   const FavoriButonveSayac({
-    Key key,
+    Key? key,
   }) : super(key: key);
 
   @override

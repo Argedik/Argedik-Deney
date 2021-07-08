@@ -6,7 +6,7 @@ class Database {
     return _firestore.collection(referancePath).snapshots();
   }
 
-  Future<void> deleteDocument({String referencePath, String id}) async {
+  Future<void> deleteDocument({required String referencePath, required String id}) async {
     await _firestore.collection(referencePath).doc(id).delete();
   }
 }

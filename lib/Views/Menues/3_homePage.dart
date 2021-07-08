@@ -56,11 +56,11 @@ class _HomePageState extends State<HomePage> {
   ];
 
   ImagePicker picker = ImagePicker();
-  String _photoUrl;
-  File _image;
+  String? _photoUrl;
+  File? _image;
 
   Future getImage() async {
-    final PickedFile pickedFile =
+    final PickedFile? pickedFile =
         await picker.getImage(source: ImageSource.camera);
     setState(() {
       if (pickedFile != null) {
@@ -71,7 +71,7 @@ class _HomePageState extends State<HomePage> {
     });
   }
 
-  Future<String> uploadImageToStorage(File imageFile) async {}
+  Future<String?> uploadImageToStorage(File imageFile) async {}
 
   @override
   Widget build(BuildContext context) {
@@ -227,6 +227,7 @@ class _HomePageState extends State<HomePage> {
                                     image: _resimler[index],
                                     renk: kartlar[index % 6].renk,
                                     id: kartlar[index % 6].id,
+                                    key: null,
                                   ),
                                 ),
                               );

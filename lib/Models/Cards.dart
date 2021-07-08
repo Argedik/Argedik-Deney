@@ -7,12 +7,12 @@ class Kart {
   final Color renk;
 
   Kart({
-    this.id,
-    this.image,
-    this.title,
-    this.description,
-    this.kartinRengi,
-    this.renk,
+    required this.id,
+    required this.image,
+    required this.title,
+    required this.description,
+    required this.kartinRengi,
+    required this.renk,
   });
 }
 

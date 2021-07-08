@@ -1,7 +1,10 @@
+import 'package:argedik/Core/themes.dart';
+import 'package:argedik/Getx/Services/Theme_service.dart';
 import 'package:argedik/Views/Menues/3_homePage.dart';
 import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
+import 'package:get/get_navigation/src/root/get_material_app.dart';
 import 'package:provider/provider.dart';
 import 'package:argedik/Models/PageManagement.dart' as route;
 import 'Dao/firebase.dart';
@@ -19,24 +22,17 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return Provider<Auth>(
       create: (context) => Auth(),
-      child: MaterialApp(
+      child: GetMaterialApp(
         debugShowCheckedModeBanner: false,
         title: 'Argedik',
-        theme: ThemeData(
-            primaryColor: Colors.green,
-            primarySwatch: Colors.green,
-            scaffoldBackgroundColor: Colors.green,
-            accentColor: Colors.green,
-            appBarTheme: AppBarTheme(color: Colors.green),
-            textTheme: TextTheme(
-                subtitle1: TextStyle(color: Colors.white),
-                headline3: TextStyle(color: Colors.white)),
-            visualDensity: VisualDensity.adaptivePlatformDensity),
+        theme: Themes().lightTheme,
         onUnknownRoute: (settings) =>
             MaterialPageRoute(builder: (context) => HomePage()),
         initialRoute: "/",
         onGenerateRoute: route.generateRoute,
         home: StartPage(),
+        themeMode: ThemeService().getThemeMode(),
+        darkTheme: Themes().darkTheme,
       ),
     );
   }

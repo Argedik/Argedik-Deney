@@ -18,7 +18,7 @@ publish_to: 'none' # Remove this line if you wish to publish to pub.dev
 version: 1.0.0+1
 
 environment:
-  sdk: ">=2.7.0 <3.0.0"
+  sdk: ">=2.12.0 <3.0.0"
 
 dependencies:
   flutter:
@@ -27,16 +27,24 @@ dependencies:
 
   # The following adds the Cupertino Icons font to your application.
   # Use with the CupertinoIcons class for iOS style icons.
-  cupertino_icons: ^1.0.2
+  cupertino_icons: 1.0.3
   #Bottom AppBar eklentisi
-  convex_bottom_bar: ^2.7.1
-  firebase: ^5.0.2
-  image_picker: ^0.6.7+22
-  firebase_auth: ^0.20.0+1
-  firebase_core: ^0.7.0
-  cloud_firestore: ^0.16.0
-  firebase_storage: ^7.0.0
-  provider: ^4.3.3
+  convex_bottom_bar: ^3.0.0
+  firebase: ^9.0.1
+  image_picker: ^0.8.1+3
+  firebase_auth: ^2.0.0
+  firebase_core: ^1.3.0
+  cloud_firestore: ^2.3.0
+  firebase_storage: ^9.0.0
+  provider: ^5.0.0
+  carousel_slider: ^4.0.0
+  get: ^4.1.4
+  get_storage: ^2.0.2
+
+
+
+  #resim boyutları ayarlama olayı henüz projede kullanmadım araştırma yapılmalı
+  #flutter_image_compress: ^0.6.7
 
 dev_dependencies:
   flutter_test:

@@ -9,7 +9,12 @@ class ProductDetails extends StatefulWidget {
   final Color renk;
 
   const ProductDetails(
-      {Key key, this.description, this.product, this.image, this.renk, this.id})
+      {Key? key,
+      required this.description,
+      required this.product,
+      required this.image,
+      required this.renk,
+      required this.id})
       : super(key: key);
 
   @override
@@ -210,8 +215,8 @@ class RenkliNokta extends StatelessWidget {
   final Color color;
   final bool isSelected;
   const RenkliNokta({
-    Key key,
-    this.color,
+    Key? key,
+    required this.color,
     this.isSelected = false,
   }) : super(key: key);
 

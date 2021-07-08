@@ -8,13 +8,13 @@ class Food {
   final String picture;
 
   Food({
-    this.id,
-    this.foodname,
-    this.comment,
-    this.materials,
-    this.making,
-    this.resources,
-    this.picture,
+    required this.id,
+    required this.foodname,
+    required this.comment,
+    required this.materials,
+    required this.making,
+    required this.resources,
+    required this.picture,
   });
 
   // objeden map oluşturma

@@ -22,7 +22,7 @@ class PageManagement extends StatefulWidget {
 
 class _PageManagementState extends State<PageManagement> {
   int _aktifIcerikNo = 2;
-  List<Widget> _icerikler;
+  late List<Widget> _icerikler;
 
   @override
   void initState() {
