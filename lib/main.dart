@@ -1,8 +1,10 @@
 import 'package:argedik/Core/themes.dart';
 import 'package:argedik/Getx/Services/Theme_service.dart';
 import 'package:argedik/Models/pageManagement.dart';
+import 'package:argedik/Views/Menues/1_favorites.dart';
 import 'package:argedik/Views/Menues/2_peak.dart';
 import 'package:argedik/Views/Menues/3_home.dart';
+import 'package:argedik/Views/Menues/4_society.dart';
 import 'package:argedik/Views/Menues/5_profiles.dart';
 import 'package:argedik/Views/Menues/dashBoard.dart';
 import 'package:firebase_core/firebase_core.dart';
@@ -33,6 +35,18 @@ class MyApp extends StatelessWidget {
         unknownRoute:
             GetPage(name: '/notfound', page: () => CircularProgressIndicator()),
         home: StartPage(),
+        getPages: [
+          GetPage(name: "/1", page: () => Favorites(), binding: SampleBind()),
+          GetPage(name: "/2", page: () => Peak(), binding: SampleBind()),
+          GetPage(name: "/3", page: () => HomePage(), binding: SampleBind()),
+          GetPage(name: "/4", page: () => Society(), binding: SampleBind()),
+          GetPage(name: "/5", page: () => Profiles(), binding: SampleBind()),
+          GetPage(
+              name: "/DashBoard",
+              page: () => DashBoard(),
+              binding: SampleBind()),
+        ],
+        initialRoute: "/",
         themeMode: ThemeService().getThemeMode(),
         darkTheme: Themes().darkTheme,
         theme: Themes().lightTheme,
@@ -89,10 +103,7 @@ class StartPage extends StatelessWidget {
                           onPressed: () {
                             //Navigator.push a Named eklendiği zaman MaterialApp route kısmında tanımlanan map yapısındaki sayfalara ulaşabiliyoruz.
                             //Navigator.pushReplacementNamed(context, '/HomePage2');
-                            Navigator.push(
-                                context,
-                                MaterialPageRoute(
-                                    builder: (context) => Peak()));
+                            Get.to(DashBoard());
                             print("absürt");
                             //Navigator.pushNamed(context, HomePage.routeName);
                           },
