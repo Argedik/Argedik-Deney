@@ -1,22 +1,19 @@
 import 'package:argedik/Dao/firebase.dart';
 import 'package:argedik/Models/Cards.dart';
 import 'package:argedik/Models/PageManagement.dart' as route;
+import 'package:argedik/Views/Menues/Details/3_homeController.dart';
 import 'package:argedik/Views/Menues/Details/homePageDetails.dart';
 import 'dart:io';
 
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
 import 'package:provider/provider.dart';
 import 'package:firebase_storage/firebase_storage.dart';
 import 'package:image_picker/image_picker.dart';
 
-class HomePage extends StatefulWidget {
+class HomePage extends GetView<HomeController> {
   static const routeName = "/3";
 
-  @override
-  State<HomePage> createState() => _HomePageState();
-}
-
-class _HomePageState extends State<HomePage> {
   final List<String> _resimler = [
     'assets/Pictures/Asure.jpg',
     'assets/Pictures/Dondurma.jpg',
@@ -59,9 +56,9 @@ class _HomePageState extends State<HomePage> {
   String? _photoUrl;
   File? _image;
 
-  Future getImage() async {
+  /*Future getImage() async {
     final PickedFile? pickedFile =
-        await picker.getImage(source: ImageSource.camera);
+    await picker.getImage(source: ImageSource.camera);
     setState(() {
       if (pickedFile != null) {
         _image = File(pickedFile.path);
@@ -69,10 +66,7 @@ class _HomePageState extends State<HomePage> {
         print("Resim seçilmedi");
       }
     });
-  }
-
-  Future<String?> uploadImageToStorage(File imageFile) async {}
-
+  }*/
   @override
   Widget build(BuildContext context) {
     //final Yemekler = _database.collection("Yemekler");
@@ -96,6 +90,7 @@ class _HomePageState extends State<HomePage> {
       text5,
       text6,
     ];
+
     return ChangeNotifierProvider<Firebase2>(
       create: (BuildContext context) => Firebase2(),
       builder: (context, child) => Scaffold(

@@ -1,25 +1,15 @@
 import 'package:argedik/Dao/firebase.dart';
 import 'package:argedik/Getx/Services/Theme_service.dart';
 import 'package:argedik/Models/PageManagement.dart' as route;
+import 'package:argedik/Views/Menues/Details/5_profilesController.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:firebase_storage/firebase_storage.dart';
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
 
-class Profiles extends StatefulWidget {
+class Profiles extends GetView<ProfilesController> {
   static const routeName = "/5";
-
-  @override
-  _ProfilesState createState() => _ProfilesState();
-}
-
-class _ProfilesState extends State<Profiles> {
-  late Future<List<FirebaseFile>> futureFiles;
-
-  @override
-  void initState() {
-    super.initState();
-    futureFiles = FirebaseApi.listAll("Arabalar/");
-  }
+  Future<List<FirebaseFile>> futureFiles = FirebaseApi.listAll("Arabalar/");
 
   @override
   Widget build(BuildContext context) {
@@ -67,14 +57,14 @@ class _ProfilesState extends State<Profiles> {
                           ThemeService().changeThemeMode();
                           UserCredential userCredential =
                               await FirebaseAuth.instance.signInAnonymously();
-                          print(userCredential);
+                          print(userCredential.user?.uid);
 
-                          FirebaseStorage _storage = FirebaseStorage.instance;
+                          /*FirebaseStorage _storage = FirebaseStorage.instance;
                           Reference refFoods = _storage.ref();
                           var photoUrl = await refFoods
                               .child("Asure.jpg")
                               .getDownloadURL();
-                          print(photoUrl);
+                          print(photoUrl);*/
                         },
                         child: Text("asdabsürt"),
                       ),

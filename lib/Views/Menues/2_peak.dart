@@ -1,7 +1,9 @@
 import 'package:argedik/Models/PageManagement.dart' as route;
+import 'package:argedik/Views/Menues/Details/2_peakController.dart';
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
 
-class Peak extends StatelessWidget {
+class Peak extends GetView<PeakController> {
   static const routeName = "/2";
 
   @override

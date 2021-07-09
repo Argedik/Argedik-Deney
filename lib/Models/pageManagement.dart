@@ -1,6 +1,6 @@
 import 'package:argedik/Views/Menues/1_favorites.dart';
 import 'package:argedik/Views/Menues/2_peak.dart';
-import 'package:argedik/Views/Menues/3_homePage.dart';
+import 'package:argedik/Views/Menues/3_home.dart';
 import 'package:argedik/Views/Menues/4_society.dart';
 import 'package:argedik/Views/Menues/5_profiles.dart';
 import 'package:flutter/material.dart';
@@ -40,7 +40,6 @@ class _PageManagementState extends State<PageManagement> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: _icerikler[_aktifIcerikNo],
       bottomNavigationBar: ConvexAppBar(
         backgroundColor: Colors.blue.shade400,
         //alttaki 2 yani homepage butonu üstüne 12 mesaj var yazısı
@@ -59,10 +58,12 @@ class _PageManagementState extends State<PageManagement> {
           });
         },
       ),
+      body: _icerikler[_aktifIcerikNo],
     );
   }
 }
 
+//isimlendirilmiş sayfa geçişleri olayı bottomnavbar ile ilgisi yok
 Route<dynamic> generateRoute(RouteSettings settings) {
   switch (settings.name) {
     case pageManagement:

@@ -1,7 +1,9 @@
+import 'package:argedik/Views/Menues/Details/1_favoritesController.dart';
 import 'package:flutter/material.dart';
 import 'package:argedik/Models/PageManagement.dart' as route;
+import 'package:get/get.dart';
 
-class Favorites extends StatelessWidget {
+class Favorites extends GetView<FavoritesController> {
   static const routeName = "/1";
 
   @override

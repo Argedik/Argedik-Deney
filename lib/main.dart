@@ -1,9 +1,14 @@
 import 'package:argedik/Core/themes.dart';
 import 'package:argedik/Getx/Services/Theme_service.dart';
-import 'package:argedik/Views/Menues/3_homePage.dart';
+import 'package:argedik/Models/pageManagement.dart';
+import 'package:argedik/Views/Menues/2_peak.dart';
+import 'package:argedik/Views/Menues/3_home.dart';
+import 'package:argedik/Views/Menues/5_profiles.dart';
+import 'package:argedik/Views/Menues/dashBoard.dart';
 import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
+import 'package:get/get.dart';
 import 'package:get/get_navigation/src/root/get_material_app.dart';
 import 'package:provider/provider.dart';
 import 'package:argedik/Models/PageManagement.dart' as route;
@@ -25,14 +30,17 @@ class MyApp extends StatelessWidget {
       child: GetMaterialApp(
         debugShowCheckedModeBanner: false,
         title: 'Argedik',
-        theme: Themes().lightTheme,
-        onUnknownRoute: (settings) =>
-            MaterialPageRoute(builder: (context) => HomePage()),
-        initialRoute: "/",
-        onGenerateRoute: route.generateRoute,
+        unknownRoute:
+            GetPage(name: '/notfound', page: () => CircularProgressIndicator()),
         home: StartPage(),
         themeMode: ThemeService().getThemeMode(),
         darkTheme: Themes().darkTheme,
+        theme: Themes().lightTheme,
+        routingCallback: (routing) {
+          if (routing!.current == "/3") {
+            Profiles();
+          }
+        },
       ),
     );
   }
@@ -80,9 +88,12 @@ class StartPage extends StatelessWidget {
                         TextButton(
                           onPressed: () {
                             //Navigator.push a Named eklendiği zaman MaterialApp route kısmında tanımlanan map yapısındaki sayfalara ulaşabiliyoruz.
-                            Navigator.pushReplacementNamed(
-                                context, route.pageManagement);
-                            //MaterialPageRoute(builder: (context) => Favorites()),
+                            //Navigator.pushReplacementNamed(context, '/HomePage2');
+                            Navigator.push(
+                                context,
+                                MaterialPageRoute(
+                                    builder: (context) => Peak()));
+                            print("absürt");
                             //Navigator.pushNamed(context, HomePage.routeName);
                           },
                           child: Container(

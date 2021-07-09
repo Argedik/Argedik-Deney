@@ -1,7 +1,9 @@
 import 'package:argedik/Models/PageManagement.dart' as route;
+import 'package:argedik/Views/Menues/Details/4_societyController.dart';
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
 
-class Society extends StatelessWidget {
+class Society extends GetView<SocietyController> {
   static const routeName = "/4";
 
   @override
