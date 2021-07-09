@@ -35,11 +35,11 @@ class DashBoard extends StatelessWidget {
             child: IndexedStack(
               index: controller.tabIndex,
               children: [
+                Favorites(),
+                Peak(),
                 HomePage(),
                 Society(),
                 Profiles(),
-                Favorites(),
-                Peak(),
               ],
             ),
           ),
