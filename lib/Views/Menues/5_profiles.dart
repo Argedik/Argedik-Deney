@@ -9,6 +9,8 @@ import 'package:get/get.dart';
 
 class Profiles extends GetView<ProfilesController> {
   static const routeName = "/5";
+
+  //Firestorage deki resimler
   Future<List<FirebaseFile>> futureFiles = FirebaseApi.listAll("Arabalar/");
 
   @override

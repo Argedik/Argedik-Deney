@@ -1,3 +1,4 @@
+import 'package:argedik/Core/Colors.dart';
 import 'package:flutter/material.dart';
 
 class Themes {
@@ -7,8 +8,9 @@ class Themes {
       accentColor: Colors.green,
       appBarTheme: AppBarTheme(color: Colors.greenAccent),
       textTheme: TextTheme(
-          subtitle1: TextStyle(color: Colors.white),
-          headline3: TextStyle(color: Colors.white)),
+          subtitle1: TextStyle(color: Colors.white, fontSize: 12),
+          headline3: TextStyle(color: Colors.white, fontSize: 12),
+          overline: TextStyle(fontSize: 12)),
       buttonTheme: ButtonThemeData(buttonColor: Colors.black),
       elevatedButtonTheme: ElevatedButtonThemeData(
           style: ElevatedButton.styleFrom(
@@ -16,5 +18,7 @@ class Themes {
               shape: RoundedRectangleBorder(
                   borderRadius: BorderRadius.circular(13.0)))),
       visualDensity: VisualDensity.adaptivePlatformDensity);
-  final darkTheme = ThemeData.dark();
+  final darkTheme = ThemeData.dark().copyWith(
+    primaryColor: bg2Color,
+  );
 }

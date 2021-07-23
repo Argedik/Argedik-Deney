@@ -15,16 +15,16 @@ class HomePage extends GetView<HomeController> {
   static const routeName = "/3";
 
   final List<String> _resimler = [
-    'assets/Pictures/Asure.jpg',
-    'assets/Pictures/Dondurma.jpg',
-    'assets/Pictures/Firinda_Sutlac.jpg',
-    'assets/Pictures/Güllac.jpg',
-    'assets/Pictures/Kadayif.jpg',
-    'assets/Pictures/Macun_Sekeri.jpg',
-    'assets/Pictures/Revani.jpg',
-    'assets/Pictures/SekerPare.jpg',
-    'assets/Pictures/Sutlac.jpg',
-    'assets/Pictures/Sutlu_Nuriye.jpg',
+    'assets/pictures/Asure.jpg',
+    'assets/pictures/Dondurma.jpg',
+    'assets/pictures/Firinda_Sutlac.jpg',
+    'assets/pictures/Güllac.jpg',
+    'assets/pictures/Kadayif.jpg',
+    'assets/pictures/Macun_Sekeri.jpg',
+    'assets/pictures/Revani.jpg',
+    'assets/pictures/SekerPare.jpg',
+    'assets/pictures/Sutlac.jpg',
+    'assets/pictures/Sutlu_Nuriye.jpg',
   ];
   final List<String> _yemekler = [
     "Aşure",
@@ -97,14 +97,16 @@ class HomePage extends GetView<HomeController> {
         backgroundColor: Colors.lightBlueAccent[100],
         appBar: buildAppBar(yukseklik),
         drawer: buildDrawer(drawerSettingNameColors, drawerSettingIconColors),
-        floatingActionButton: FloatingActionButton(
+
+        //Storage resim url adresi alma denemesi
+        /*floatingActionButton: FloatingActionButton(
           onPressed: () async {
             FirebaseStorage _storage = FirebaseStorage.instance;
             Reference refFoods = _storage.ref().child("Asure.jpg");
             var photoUrl = await refFoods.child("Asure.jpg").getDownloadURL();
             print(photoUrl);
           },
-        ),
+        ),*/
         body: SafeArea(
           child: Container(
             decoration: BoxDecoration(

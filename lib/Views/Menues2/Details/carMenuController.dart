@@ -1,6 +1,6 @@
 import 'package:get/get.dart';
 
-class DashBoardController extends GetxController {
+class CarMenuController extends GetxController {
   var tabIndex = 2;
 
   void changeTabIndex(int index) {

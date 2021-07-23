@@ -11,7 +11,7 @@ class ThemeService {
 
   bool isSavedDarkMode() {
     return _getStorage.read(storageKey) ??
-        false; // storagekey = true değilse(??) false'tur
+        false; // storagekey = isdarkmde değilse(??) false'tur
   }
 
   void saveThemeMode(bool isDarkMode) {

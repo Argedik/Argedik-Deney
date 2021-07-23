@@ -2,7 +2,11 @@ import 'package:argedik/Views/Menues/1_favorites.dart';
 import 'package:argedik/Views/Menues/2_peak.dart';
 import 'package:argedik/Views/Menues/3_home.dart';
 import 'package:argedik/Views/Menues/4_society.dart';
-import 'package:argedik/Views/Menues/5_profiles.dart';
+import 'package:argedik/Views/Menues/Details/1_favoritesController.dart';
+import 'package:argedik/Views/Menues/Details/2_peakController.dart';
+import 'package:argedik/Views/Menues/Details/3_homeController.dart';
+import 'package:argedik/Views/Menues/Details/4_societyController.dart';
+import 'package:argedik/Views/Menues/Details/5_profilesController.dart';
 import 'package:argedik/Views/Menues/Details/dashBoardController.dart';
 import 'package:convex_bottom_bar/convex_bottom_bar.dart';
 import 'package:flutter/material.dart';
@@ -10,7 +14,6 @@ import 'package:flutter/src/widgets/framework.dart';
 import 'package:get/get.dart';
 
 class DashBoard extends StatelessWidget {
-  static const String routeName = '/DashBoard';
   @override
   Widget build(BuildContext context) {
     return GetBuilder<DashBoardController>(
@@ -39,7 +42,7 @@ class DashBoard extends StatelessWidget {
                 Peak(),
                 HomePage(),
                 Society(),
-                Profiles(),
+                Society(),
               ],
             ),
           ),
@@ -52,11 +55,11 @@ class DashBoard extends StatelessWidget {
 class SampleBind extends Bindings {
   @override
   void dependencies() {
-    Get.lazyPut<HomePage>(() => HomePage());
-    Get.lazyPut<Society>(() => Society());
-    Get.lazyPut<Profiles>(() => Profiles());
-    Get.lazyPut<Favorites>(() => Favorites());
-    Get.lazyPut<Peak>(() => Peak());
-    Get.lazyPut<DashBoard>(() => DashBoard());
+    Get.lazyPut<HomeController>(() => HomeController());
+    Get.lazyPut<SocietyController>(() => SocietyController());
+    Get.lazyPut<ProfilesController>(() => ProfilesController());
+    Get.lazyPut<FavoritesController>(() => FavoritesController());
+    Get.lazyPut<PeakController>(() => PeakController());
+    Get.lazyPut<DashBoardController>(() => DashBoardController());
   }
 }
