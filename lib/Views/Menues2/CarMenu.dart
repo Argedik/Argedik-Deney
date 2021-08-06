@@ -1,5 +1,6 @@
 import 'package:argedik/Views/Menues/1_favorites.dart';
 import 'package:argedik/Views/Menues/5_profiles.dart';
+import 'package:argedik/Views/Menues2/1_carTour.dart';
 import 'package:argedik/Views/Menues2/2_myCars.dart';
 import 'package:argedik/Views/Menues2/3_maps.dart';
 import 'package:argedik/Views/Menues2/4_masters.dart';
@@ -34,7 +35,7 @@ class CarMenu extends StatelessWidget {
             child: IndexedStack(
               index: controller.tabIndex,
               children: [
-                Favorites(),
+                CarTour(),
                 MyCars(),
                 Maps(),
                 Masters(),
