@@ -83,41 +83,49 @@ class MyCarsWidgets extends StatelessWidget {
                         right: 8,
                         bottom: 24,
                       ),
-                      child: Column(
-                        children: [
-                          Container(
-                            decoration: BoxDecoration(
-                              border: Border(
-                                bottom:
-                                    BorderSide(width: 3, color: Colors.black45),
+                      child: SingleChildScrollView(
+                        child: Column(
+                          children: [
+                            Container(
+                              decoration: BoxDecoration(
+                                border: Border(
+                                  bottom: BorderSide(
+                                      width: 3, color: Colors.black45),
+                                ),
                               ),
                             ),
-                          ),
-                          CarDetails(
-                              Text1: "Silindir Hacmi: 1498 cc",
-                              Text2: "Maksimum Hız: 224 km/s"),
-                          CarDetails(
-                              Text1: "Beygir Gücü: 150 HP",
-                              Text2: "0-100 Km Hızlanma: 8.2 sn"),
-                          CarDetails(
-                              Text1: "Vites Tipi: 7 İleri Otomatik",
-                              Text2: "0-100 Km Hızlanma: 8.2 sn"),
-                          CarDetails(
-                              Text1: "Şehir İçi Ort. Tük.: 6.4 lt",
-                              Text2: "Şehir Dışı Ort. Tük.: 4.4 lt"),
-                          CarDetails(
-                              Text1: "Karma Yakıt Tüketimi: 5.1 lt",
-                              Text2: "Uzunluk: 4458 mm"),
-                          CarDetails(
-                              Text1: "Genişlik: 1796 mm",
-                              Text2: "Yükseklik: 1416 mm"),
-                          CarDetails(
-                              Text1: "Maksimum Tork: 250 Nm",
-                              Text2: "Boş Ağırlık: 1280 kg"),
-                          CarDetails(
-                              Text1: "Bagaj Hacmi: 425 lt",
-                              Text2: "Yakıt Deposu: 50 lt"),
-                        ],
+                            CarDetails(
+                                Text1: "Silindir Hacmi: 1498 cc",
+                                Text2: "Maksimum Hız: 224 km/s"),
+                            CarDetails(
+                                Text1: "Beygir Gücü: 150 HP",
+                                Text2: "0-100 Km Hızlanma: 8.2 sn"),
+                            CarDetails(
+                                Text1: "Vites Tipi: 7 İleri Otomatik",
+                                Text2: "0-100 Km Hızlanma: 8.2 sn"),
+                            CarDetails(
+                                Text1: "Şehir İçi Ort. Tük.: 6.4 lt",
+                                Text2: "Şehir Dışı Ort. Tük.: 4.4 lt"),
+                            CarDetails(
+                                Text1: "Karma Yakıt Tüketimi: 5.1 lt",
+                                Text2: "Uzunluk: 4458 mm"),
+                            CarDetails(
+                                Text1: "Genişlik: 1796 mm",
+                                Text2: "Yükseklik: 1416 mm"),
+                            CarDetails(
+                                Text1: "Maksimum Tork: 250 Nm",
+                                Text2: "Boş Ağırlık: 1280 kg"),
+                            CarDetails(
+                                Text1: "Bagaj Hacmi: 425 lt",
+                                Text2: "Yakıt Deposu: 50 lt"),
+                            CarDetails(
+                                Text1: "Bagaj Hacmi: 425 lt",
+                                Text2: "Yakıt Deposu: 50 lt"),
+                            CarDetails(
+                                Text1: "Bagaj Hacmi: 425 lt",
+                                Text2: "Yakıt Deposu: 50 lt"),
+                          ],
+                        ),
                       ),
                     ),
                   ),
