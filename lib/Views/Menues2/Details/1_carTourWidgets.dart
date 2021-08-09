@@ -148,46 +148,61 @@ class _CarTourWidgetsState extends State<CarTourWidgets> {
             child: ValueListenableBuilder<double>(
                 valueListenable: ValueNotifier<double>(_textPage),
                 builder: (context, textPage, _) {
-                  return Column(
-                    children: [
-                      Expanded(
-                        child: PageView.builder(
-                            controller: _pageTextController,
-                            itemCount: arabalar.length,
-                            physics: const NeverScrollableScrollPhysics(),
-                            itemBuilder: (context, index) {
-                              final opacity = (1 - (index - _textPage).abs())
-                                  .clamp(0.0, 1.0);
-                              return Opacity(
-                                opacity: opacity,
-                                child: Padding(
-                                  padding: EdgeInsets.symmetric(
-                                      horizontal: size.width * 0.2),
-                                  child: Text(
-                                    arabalar[index].name,
-                                    maxLines: 2,
-                                    textAlign: TextAlign.center,
-                                    style: TextStyle(
-                                        color: Colors.black,
-                                        fontSize: 25,
-                                        fontWeight: FontWeight.w800),
+                  return TweenAnimationBuilder<double>(
+                    tween: Tween(begin: 1.0, end: 0.0),
+                    builder: (context, value, child) {
+                      return Transform.translate(
+                        child: child,
+                        offset: Offset(0.0, -100 * value),
+                      );
+                    },
+                    duration: _duration,
+                    child: Column(
+                      children: [
+                        Expanded(
+                          child: PageView.builder(
+                              controller: _pageTextController,
+                              itemCount: arabalar.length,
+                              physics: const NeverScrollableScrollPhysics(),
+                              itemBuilder: (context, index) {
+                                final opacity = (1 - (index - _textPage).abs())
+                                    .clamp(0.0, 1.0);
+                                return Opacity(
+                                  opacity: opacity,
+                                  child: Padding(
+                                    padding: EdgeInsets.symmetric(
+                                        horizontal: size.width * 0.2),
+                                    child: Hero(
+                                      tag: "text_${arabalar[index].name}",
+                                      child: Material(
+                                        child: Text(
+                                          arabalar[index].name,
+                                          maxLines: 2,
+                                          textAlign: TextAlign.center,
+                                          style: TextStyle(
+                                              color: Colors.black,
+                                              fontSize: 25,
+                                              fontWeight: FontWeight.w800),
+                                        ),
+                                      ),
+                                    ),
                                   ),
-                                ),
-                              );
-                            }),
-                      ),
-                      const SizedBox(height: 15),
-
-                      //kahve üzerindeki dolar fiyatları arasındaki geçiş animasyonu
-                      AnimatedSwitcher(
-                        duration: _duration,
-                        child: Text(
-                          "\$${arabalar[_textPage.toInt()].model.toStringAsFixed(2)}",
-                          style: TextStyle(color: Colors.black, fontSize: 24),
-                          key: Key(arabalar[_textPage.toInt()].name),
+                                );
+                              }),
                         ),
-                      ),
-                    ],
+                        const SizedBox(height: 15),
+
+                        //kahve üzerindeki dolar fiyatları arasındaki geçiş animasyonu
+                        AnimatedSwitcher(
+                          duration: _duration,
+                          child: Text(
+                            "\$${arabalar[_textPage.toInt()].model.toStringAsFixed(2)}",
+                            style: TextStyle(color: Colors.black, fontSize: 24),
+                            key: Key(arabalar[_textPage.toInt()].name),
+                          ),
+                        ),
+                      ],
+                    ),
                   );
                 }),
           ),

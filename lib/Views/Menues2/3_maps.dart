@@ -1,3 +1,4 @@
+import 'package:argedik/Views/Menues2/Details/3_mapsWidgets.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
@@ -9,9 +10,7 @@ class Maps extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: Center(
-        child: Text("absürt"),
-      ),
+      body: MapsWidgets(),
     );
   }
 }
