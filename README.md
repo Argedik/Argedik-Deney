@@ -1,5 +1,5 @@
 # argedik
-Hi , I'm Ibrahim Jelliti
+
 A new Flutter project.
 
 ## Getting Started
